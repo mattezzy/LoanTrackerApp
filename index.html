@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debt and Loan Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation Arrows -->
+        <div class="arrow left-arrow">&#10094;</div>
+        <div class="arrow right-arrow">&#10095;</div>
+
+        <!-- Header Section -->
+        <header>
+            <button id="addLoan" class="add-loan-button">
+                <i class="fas fa-plus"></i>
+            </button>
+            <span id="loanCount" class="loan-count">1</span>
+            <button id="themeToggle">🌙</button>
+        </header>
+
+        <!-- Main Content Section -->
+        <section class="content">
+            <!-- Left Side: Loan Title and Chart -->
+            <div class="left-side">
+                <h1 id="title" class="editable">LANDBANK</h1>
+                <div class="chart-container">
+                    <canvas id="doughnutChart"></canvas>
+                    <div class="chart-center" id="chartPercentage">9%</div>
+                </div>
+            </div>
+
+            <!-- Right Side: Loan Details -->
+            <div class="right-side">
+                <div class="details-grid">
+                    <div>
+                        <label>LOAN AMOUNT</label>
+                        <span id="loanAmountDisplay" class="editable">₱311,000</span>
+                        <input type="text" id="loanAmountInput" class="edit-input" value="₱2,311,000" style="display: none;">
+                    </div>
+                    <div>
+                        <label>TOTAL PARTIAL</label>
+                        <p id="totalMonthlyPaid">₱29,514.06</p>
+                    </div>
+                    <div>
+                        <label>OUTSTANDING BALANCE</label>
+                        <p id="outstandingBalance">₱2,281,485.94</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Payment Schedule Section -->
+        <section class="payment-schedule">
+            <h2>Monthly Payment: <input type="text" id="monthlyPaymentInput" class="editable" value="₱9,838.02"></h2>
+            <div class="table-header">
+                <span>NO.</span>
+                <span>DUE DATE</span>
+                <span>AMOUNT</span>
+                <button id="addPayment">+</button>
+            </div>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td class="editable">January 25, 2025</td>
+                        <td class="editable">₱9,838.02</td>
+                        <td><button class="removePayment">-</button></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td class="editable">February 25, 2025</td>
+                        <td class="editable">₱9,838.02</td>
+                        <td><button class="removePayment">-</button></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td class="editable">March 25, 2025</td>
+                        <td class="editable">₱9,838.02</td>
+                        <td><button class="removePayment">-</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
